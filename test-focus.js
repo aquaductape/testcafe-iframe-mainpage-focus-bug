@@ -1,6 +1,6 @@
 fixture`Test Focus`.page`./index.html`;
 
-test("Dont fire focusin event", async (t) => {
+test("Dont fire focusin and focus events on Main Window", async (t) => {
   await t.switchToIframe(`.container-div #iframe`).click("button");
   await t.switchToMainWindow();
   const { error, log } = await t.getBrowserConsoleMessages();
